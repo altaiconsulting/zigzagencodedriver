@@ -343,4 +343,31 @@ func main() {
 		fmt.Printf("Number %d is decoded into %d\n", encoded16, n16)
 	}
 	fmt.Println("-------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+	encoded16 = math.MaxUint16
+	n16, err = zigzagencode.Decode[uint16, int16](encoded16)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Number %d is decoded into %d\n", encoded16, n16)
+	}
+	fmt.Println("-------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+	encoded16 = math.MaxUint16
+	n8, err = zigzagencode.Decode[uint16, int8](encoded16)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Number %d is decoded into %d\n", encoded16, n8)
+	}
+	fmt.Println("-------------------------------------------------------------------------------------------------------------------------------------------------------")
+
+	encoded16 = 0
+	n16, err = zigzagencode.Decode[uint16, int16](encoded16)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Number %d is decoded into %d\n", encoded16, n16)
+	}
+	fmt.Println("-------------------------------------------------------------------------------------------------------------------------------------------------------")
 }
